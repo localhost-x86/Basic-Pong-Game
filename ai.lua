@@ -28,6 +28,7 @@ function AI:move(dt)
     self.y = self.y + self.yVel * dt   
 end
 
+
 function AI:acquireTarget()
     if Ball.y + Ball.height < self.y then
         self.yVel = -self.speed    
