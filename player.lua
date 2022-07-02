@@ -1,5 +1,5 @@
-
 Player = {}
+
 
 function Player:load()
     self.x = 50
@@ -15,6 +15,7 @@ function Player:update(dt)
     self:CheckBoundaries(dt)
 end
 
+
 function Player:move(dt)    
     if love.keyboard.isDown("w") then
         self.y = self.y - self.speed * dt
@@ -23,6 +24,7 @@ function Player:move(dt)
     end
 end
 
+
 function Player:CheckBoundaries(dt)
     if self.y < 0 then
         self.y = 0
@@ -30,6 +32,7 @@ function Player:CheckBoundaries(dt)
         self.y = love.graphics.getHeight() - self.height
     end
 end
+
 
 function Player:draw()
     love.graphics.rectangle("fill", self.x, self.y, self.width, self.height)
