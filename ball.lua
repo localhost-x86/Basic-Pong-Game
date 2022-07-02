@@ -1,5 +1,6 @@
 Ball = {}
 
+
 function Ball:load()
     self.x = love.graphics.getWidth() / 2
     self.y = love.graphics.getHeight() / 2
@@ -59,10 +60,8 @@ function Ball:collide()
         self.x = love.graphics.getWidth() / 2 - self.width / 2
         self.y = love.graphics.getHeight() / 2 - self.height / 2
         self.yVel = 0
-        self.xVel = -self.speed
-        
+        self.xVel = -self.speed        
     end
-
 end
 
 
