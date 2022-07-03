@@ -16,6 +16,7 @@ end
 
 function AI:update(dt)
     self:move(dt)
+    self:CheckBoundaries(dt)
     self.timer = self.timer + dt
     if self.timer > self.rate then
         self.timer = 0
@@ -36,6 +37,15 @@ function AI:acquireTarget()
         self.yVel = self.speed
     else
         self.yVel = 0
+    end
+end
+
+
+function AI:CheckBoundaries(dt)
+    if self.y < 0 then
+        self.y = 0
+    elseif self.y + self.height > love.graphics.getHeight() then
+        self.y = love.graphics.getHeight() - self.height
     end
 end
 
